@@ -28,6 +28,10 @@ port ENV.fetch("PORT") { 3000 }
 # Specifies the `environment` that Puma will run in.
 environment ENV.fetch("RAILS_ENV") { "development" }
 
+workers ENV.fetch("WEB_CONCURRENCY") { 2 } #YO LO AGREGUÉ
+
+preload_app! #YO LO AGREGUÉ
+
 # Specifies the `pidfile` that Puma will use.
 pidfile ENV.fetch("PIDFILE") { "tmp/pids/server.pid" }
 
