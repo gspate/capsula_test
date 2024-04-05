@@ -18,12 +18,14 @@ default: &default
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
   username: <%= ENV["DB_USER"] %> #YO LO AGREUGÉ
   password: <%= ENV["DB_PASSWORD"] %> #YO LO AGREGUÉ
 
 development:
   <<: *default
   database: capsula_test_development
+  
   url: <%= ENV["DATABASE_URL"] %> #YO LO AGREGUÉ
 
   # The specified database role being used to connect to PostgreSQL.
